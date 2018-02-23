@@ -9,15 +9,18 @@ class Appointments extends Component {
    	console.log("component", this.props.images)
    	var user = this.props.user;
         return (
-            <div className="main">
-              <h1> Welcome to HeartBeat Department of Science </h1>
-            	{
+            <div className="container">
+              {
             		user.map(function(data){
+                  var val = ""
+                  if(Number(data.date.slice(11,13)) > 12) val = "pm"
+                  else val = "am"
             			return (
             			        <div key={data.id}>
-                            <h1>date of the appointment: {data.date.slice(0,10)}</h1>
-            								<h1>Name of the patient: {data.name}</h1>
-            								<h1>Name of the doctor: {data.docName}</h1>
+                            <h1>Name of the patient: {data.name}</h1>
+                            <h1>Name of the doctor: {data.docName}</h1>
+                            <h1>Date of the appointment: {data.date.slice(0,10)}</h1>
+                            <h1>Time of the appointment: {data.date.slice(11,16)} {val}</h1>
             							</div>
           							)
             		})
@@ -28,8 +31,7 @@ class Appointments extends Component {
 }
 
 const mapStateToProps = function(state, ownProps){
-	// images is the value of state in store
-	console.log("map", state)
+
 	let people = state.user;
   const appointment = ownProps.match.params.id
   if(appointment) var user = people.filter(data => data.id == appointment)

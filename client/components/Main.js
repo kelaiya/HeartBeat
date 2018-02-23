@@ -13,11 +13,10 @@ class Main extends Component {
 }
    render() {
    	console.log("component", this.props.images)
-   	var user = this.props.images;
+   	var user = this.props.user;
         return (
-            <div className="main">
-              <h1> Welcome to HeartBeat Department of Science </h1>
-            	{
+            <div className="container">
+                  	{
             		user.map(function(data){
             			return (
             			        <div key={data.id}>
@@ -34,12 +33,13 @@ class Main extends Component {
     }
 }
 
-const mapStateToProps = function(state){
-	// images is the value of state in store
-	console.log("map", state)
-	return {
-		images : state.user
-	}
+const mapStateToProps = function(state, ownProps){
+	let people = state.user;
+  const name = ownProps.match.params.name
+  if(name) var user = people.filter(data => data.name == name)
+  return {
+    user
+  }
 
 }
 

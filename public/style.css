@@ -1,21 +1,56 @@
 body {
   font-family: sans-serif;
+  background-color: lightblue;
 }
+  .nav {
+    display: flex;
+    align-items: center;
+    height: 15vh;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    color: #C63D0F;
+    font-family: -webkit-pictograph;
+    font-size: 25px;
+  }
 
-a {
-  text-decoration: none;
-}
+  .container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: blue;
+    font-family: -webkit-pictograph;
+  }
 
-label {
-  display: block;
-}
+  .text-color{
+    color: purple;
+    font-family: "Georgia";
+  }
 
-nav a {
-  display: inline-block;
-  margin: 1em;
-}
+  .Search-box{
+    width: calc(50% - 100px);
+    background-color: #edc9d3;
+    margin: 50px;
+  }
 
-form div {
-  margin: 1em;
-  display: inline-block;
-}
+  .image{
+    border: 5px solid purple;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 4px;
+    width: 200px;
+    height: 200px;
+    vertical-align: middle;
+  }
+
+  .sortclass{
+    border-radius: 4px;
+    width: 150px;
+    height: 40px;
+    float: right;
+    font-size: 18px;
+    font-family: -webkit-pictograph;
+    justify-content: right;
+  }
