@@ -61,8 +61,11 @@ class Home extends Component {
               	return (
               		<div key={data.id} className="Search-box">
               			<img src= {data.image} className="image" />
-              			<Link to={`/${data.id}`}className="text-color1">{data.name}</Link>
-              		</div>
+              			<div className="text-color1">
+                      <h2><Link to={`/${data.id}`}className="text-color1">Name: {data.name}</Link></h2>
+              		    <h4> Click on the name to see more information </h4>
+                    </div>
+                  </div>
             		)
               })
             }

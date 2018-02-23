@@ -9,8 +9,8 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-    color: #692346;
-    background-color: #86747e;
+    olor: #406923;
+    background-color: #b18f2a;
     font-family: -webkit-pictograph;
     font-size: 25px;
     border-bottom-style: dashed;
@@ -25,18 +25,18 @@ body {
   }
 
   .text-color1{
-    color: purple;
+    color: #735313;
     font-family: -webkit-pictograph;
     font-size: 30px;
     text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 50px;
+    margin: 20px;
   }
 
   .text-color2{
-    color: purple;
+    color: #735313;
     font-family: -webkit-pictograph;
     font-size: 30px;
     text-decoration: none;
@@ -47,17 +47,15 @@ body {
   }
 
   .Search-box{
-    width: calc(50% - 100px);
     margin: 50px;
     display: -webkit-inline-box;
+    background-color: #827a79;
+    border-style: outset;
   }
 
   .image{
-    border: 5px solid purple;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
+    border: 5px solid #67651a;
+    margin: 45px;
     border-radius: 4px;
     width: 200px;
     height: 200px;
@@ -81,7 +79,11 @@ body {
   }
 
   .appointment{
-    background-color: #612816;
+    background-color: #73605a;
     margin: 20px;
-    color: #c3a6ba;
+    color: #07464e
+  }
+
+  .h1 {
+    color: #a2073e;
   }
