@@ -16,7 +16,7 @@ const User = db.define('user', {
     type: Sequelize.STRING
   },
   image: {
-    type: Sequelize.STRING
+    type: Sequelize.TEXT
   }
 })
 

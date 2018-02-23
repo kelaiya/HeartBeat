@@ -6,10 +6,6 @@ import history from '../history'
  */
 const GET_USER = 'GET_USER'
 
-/**
- * INITIAL STATE
- */
-const defaultUser = {}
 
 /**
  * ACTION CREATORS
@@ -19,20 +15,23 @@ const getUser = user => ({type: GET_USER, user})
 /**
  * THUNK CREATORS
  */
-export const fetchUser = () =>
-  dispatch =>
-    axios.get('/api/user')
+export const fetchUser = () => {
+  console.log("inside")
+  return dispatch =>
+    axios.get('/api/users')
       .then(res => {
       	console.log("hey")
-        dispatch(getUser(res.data || defaultUser))
+        dispatch(getUser(res.data))
       })
      
       .catch(err => console.log(err))
 
+}
+
 /**
  * REDUCER
  */
-export default function (state = defaultUser, action) {
+export default function (state = [], action) {
   switch (action.type) {
     case GET_USER:
       return action.user

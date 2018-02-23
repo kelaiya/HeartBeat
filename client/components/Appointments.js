@@ -1,19 +1,13 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux';
 import store, {fetchUser} from '../store'
-import { Link } from 'react-router-dom';
-
 // Main component is the initial page displayed by default 
 
-class Main extends Component {
+class Appointments extends Component {
 
-   componentDidMount() {
-    const userThunk = fetchUser();
-    store.dispatch(userThunk);
-}
    render() {
    	console.log("component", this.props.images)
-   	var user = this.props.images;
+   	var user = this.props.user;
         return (
             <div className="main">
               <h1> Welcome to HeartBeat Department of Science </h1>
@@ -21,26 +15,28 @@ class Main extends Component {
             		user.map(function(data){
             			return (
             			        <div key={data.id}>
-            									<img src= {data.image} />
-            									<h2> Welcome {data.name} to the world of happiness </h2>
-            									<Link to={`/appointment/${data.id}`}>Upcoming Appointments</Link>
+                            <h1>date of the appointment: {data.date.slice(0,10)}</h1>
+            								<h1>Name of the patient: {data.name}</h1>
+            								<h1>Name of the doctor: {data.docName}</h1>
             							</div>
           							)
             		})
             	}
-            	
             </div>
         )
     }
 }
 
-const mapStateToProps = function(state){
+const mapStateToProps = function(state, ownProps){
 	// images is the value of state in store
 	console.log("map", state)
-	return {
-		images : state.user
+	let people = state.user;
+  const appointment = ownProps.match.params.id
+  if(appointment) var user = people.filter(data => data.id == appointment)
+  return {
+		user
 	}
 
 }
 
-export default connect(mapStateToProps)(Main);
+export default connect(mapStateToProps)(Appointments);
