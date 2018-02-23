@@ -17,7 +17,7 @@ class Appointments extends Component {
               if(Number(data.date.slice(11,13)) > 12) val = "pm"
               else val = "am"
             	return (
-            			<div key={data.id}>
+            			<div key={data.id} className="appointment">
                     <h1>Name of the doctor: {data.docName}</h1>
                     <h1>Date of the appointment: {data.date.slice(0,10)}</h1>
                     <h1>Time of the appointment: {data.date.slice(11,16)} {val}</h1>

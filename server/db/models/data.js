@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
+// Data model will contain information about the appoinments of patients.
 const Data = db.define('data', {
   date: {
     type: Sequelize.DATE,

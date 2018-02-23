@@ -1,6 +1,3 @@
-// const LiveReloadPlugin = require('webpack-livereload-plugin')
-// const isDev = process.env.NODE_ENV === 'development'
-
 module.exports = {
   entry: './client/index.js',
   output: {
@@ -15,7 +12,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader'
       },
-      // webpack will build anything that matches scss extension into a single css file
+      
       {
         test: /\.scss$/,
         use: [

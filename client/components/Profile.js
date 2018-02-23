@@ -20,7 +20,8 @@ class Profile extends Component {
         <div className="container">
           {
             appointment.length > 0 ? <div>
-              <div key={appointment[0].user.id} className="Search-box">
+              <h1> Welcome {appointment[0].user.name} to HeartBeat patient portal </h1>
+              <div key={appointment[0].user.id} className="display">
                 <img src= {appointment[0].user.image} className="image" />
                 <Link to={`/appointment/${appointment[0].user.id}`}className="text-color2">Upcoming appointment</Link>
               </div>
