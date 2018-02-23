@@ -10,6 +10,7 @@ export default class Routes extends Component {
 
   render () {
 
+    // All the Components are defined according to the routes.
     return (
       <Router history={history}>
         <div>

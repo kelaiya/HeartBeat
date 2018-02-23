@@ -11,7 +11,7 @@ import Navbar from './Navbar'
 class Home extends Component {
   constructor(props){
     super(props)
-    // srtKey will sort the names according to the type selected. 
+    // sortKey will sort the names according to the type selected. 
     this.state = {
       sortKey: ""
     }

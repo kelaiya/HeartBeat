@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-// Main component is the initial page displayed by default 
+// Navbar component is the header of the app. 
 
 export default class Home extends Component {
   render() {
