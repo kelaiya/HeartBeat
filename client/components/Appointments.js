@@ -12,6 +12,7 @@ class Appointments extends Component {
         <div className="container">
           {
             user.map(function(data){
+              // To determne whether its am or pm, I used slice method.
               var val = ""
               if(Number(data.date.slice(11,13)) > 12) val = "pm"
               else val = "am"
@@ -21,9 +22,9 @@ class Appointments extends Component {
                     <h1>Date of the appointment: {data.date.slice(0,10)}</h1>
                     <h1>Time of the appointment: {data.date.slice(11,16)} {val}</h1>
             			</div>
-          		)
+          		  )
             })
-        }
+          }
       </div>
       )
   }
@@ -31,7 +32,7 @@ class Appointments extends Component {
 
 const mapStateToProps = function(state, ownProps){
 
-  // state.appointment has all the details of patient.
+  // state.appointment has all the details of patient and its appointments.
 	let datas = state.appointment;
   const info = ownProps.match.params.id
   if(info) var ans = datas.filter(data => data.user.id == info)
@@ -40,4 +41,5 @@ const mapStateToProps = function(state, ownProps){
 	}
 }
 
+//Export the class.
 export default connect(mapStateToProps)(Appointments);

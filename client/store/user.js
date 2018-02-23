@@ -16,16 +16,12 @@ const getUser = user => ({type: GET_USER, user})
  * THUNK CREATORS
  */
 export const fetchUser = () => {
-  console.log("inside")
   return dispatch =>
     axios.get('/api/users')
-      .then(res => {
-      	console.log("hey")
-        dispatch(getUser(res.data))
-      })
-     
-      .catch(err => console.log(err))
-
+    .then(res => {
+      dispatch(getUser(res.data))
+    })
+    .catch(err => console.log(err))
 }
 
 /**

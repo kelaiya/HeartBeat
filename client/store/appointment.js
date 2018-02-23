@@ -16,16 +16,12 @@ const getAppointment = appointment => ({type: GET_APPOINTMENT, appointment})
  * THUNK CREATORS
  */
 export const fetchAppointment = (id) => {
-  console.log("inside app")
   return dispatch =>
     axios.get(`/api/data/${id}`)
-      .then(res => {
-      	console.log("hey")
-        dispatch(getAppointment(res.data))
-      })
-     
-      .catch(err => console.log(err))
-
+    .then(res => {
+      dispatch(getAppointment(res.data))
+    })
+    .catch(err => console.log(err))
 }
 
 /**
