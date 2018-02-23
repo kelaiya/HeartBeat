@@ -4,12 +4,7 @@ const {User, Data} = require('../db/models')
 module.exports = router
 
 router.get('/', (req, res, next) => {
-	Data.findAll({ where: req.query },
-	             include: [{
-      model: User,
-      through: { 
-        attributes: ['userId']}
-      }])
+	User.findAll({where: req.query})
   .then(data => res.json(data))
   .catch(next);
 })

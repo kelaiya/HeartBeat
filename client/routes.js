@@ -17,7 +17,7 @@ export default class Routes extends Component {
           <Navbar />
           <Switch>
   	        <Route exact path='/' component={Home} />
-            <Route exact path='/:name' component={Main} />
+            <Route exact path='/:id' component={Main} />
   	        <Route exact path='/appointment/:id' component={Appointments} />
         	</Switch>
         </div>

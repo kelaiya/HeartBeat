@@ -23,7 +23,7 @@ handleSortChange(event){
     store.dispatch(userThunk);
 }
    render() {
-   	console.log("component", this.props.images)
+   	// console.log("component", this.props.images)
    	var user = this.props.user;
     if(this.state.sortKey == "titleA-Z"){
       user.sort((a, b) => b.name < a.name);
@@ -50,10 +50,11 @@ handleSortChange(event){
 
                 {
               		user.map(function(data){
-              			return (
+              			
+                    return (
               			        <div key={data.id} className="Search-box">
               								<img src= {data.image} className="image" />
-              								<Link to={`/${data.name}`}className="text-color">{data.name}</Link>
+              								<Link to={`/${data.id}`}className="text-color">{data.name}</Link>
               							</div>
             				)
               		})

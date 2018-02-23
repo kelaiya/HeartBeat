@@ -7,7 +7,7 @@ class Appointments extends Component {
 
    render() {
    	console.log("component", this.props.images)
-   	var user = this.props.user;
+   	var user = this.props.ans;
         return (
             <div className="container">
               {
@@ -17,7 +17,7 @@ class Appointments extends Component {
                   else val = "am"
             			return (
             			        <div key={data.id}>
-                            <h1>Name of the patient: {data.name}</h1>
+                   
                             <h1>Name of the doctor: {data.docName}</h1>
                             <h1>Date of the appointment: {data.date.slice(0,10)}</h1>
                             <h1>Time of the appointment: {data.date.slice(11,16)} {val}</h1>
@@ -32,11 +32,11 @@ class Appointments extends Component {
 
 const mapStateToProps = function(state, ownProps){
 
-	let people = state.user;
-  const appointment = ownProps.match.params.id
-  if(appointment) var user = people.filter(data => data.id == appointment)
+	let datas = state.appointment;
+  const info = ownProps.match.params.id
+  if(info) var ans = datas.filter(data => data.user.id == info)
   return {
-		user
+		ans
 	}
 
 }

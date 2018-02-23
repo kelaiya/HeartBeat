@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux';
-import store, {fetchUser} from '../store'
+import store, {fetchAppointment} from '../store'
 import { Link } from 'react-router-dom';
 
 // Main component is the initial page displayed by default 
@@ -8,37 +8,39 @@ import { Link } from 'react-router-dom';
 class Main extends Component {
 
    componentDidMount() {
-    const userThunk = fetchUser();
-    store.dispatch(userThunk);
+    const id = this.props.match.params.id;
+    const appointmentThunk = fetchAppointment(id);
+    store.dispatch(appointmentThunk);
 }
    render() {
-   	console.log("component", this.props.images)
-   	var user = this.props.user;
+   	console.log("component", this.props.appointment)
+   	var appointment = this.props.appointment;
+    console.log("zero",appointment[0], appointment == true)
         return (
             <div className="container">
-                  	{
-            		user.map(function(data){
-            			return (
-            			        <div key={data.id}>
-            									<img src= {data.image} />
-            									<h2> Welcome {data.name} to the world of happiness </h2>
-            									<Link to={`/appointment/${data.id}`}>Upcoming Appointments</Link>
-            							</div>
-          							)
-            		})
-            	}
-            	
+              <h1>hello</h1>
+              {
+                appointment.length > 0 ? <div>
+                  <div key={appointment[0].user.id} className="Search-box">
+                    <img src= {appointment[0].user.image} className="image" />
+                    <Link to={`/appointment/${appointment[0].user.id}`}className="text-color">Upcoming appointment</Link>
+                  </div>
+                </div> : null
+              }
+            	   
             </div>
         )
     }
 }
 
 const mapStateToProps = function(state, ownProps){
-	let people = state.user;
-  const name = ownProps.match.params.name
-  if(name) var user = people.filter(data => data.name == name)
+	let info = state.appointment;
+
+  const id = ownProps.match.params.id
+  console.log("name", id,"info", state)
+  if(id) var appointment = info.filter(data => data.user.id == id)
   return {
-    user
+    appointment
   }
 
 }
