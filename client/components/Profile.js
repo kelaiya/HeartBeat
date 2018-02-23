@@ -23,7 +23,7 @@ class Profile extends Component {
               <h1 className="h1"> Hello {appointment[0].user.name}, enjoy your day!!! </h1>
               <div key={appointment[0].user.id} className="display">
                 <img src= {appointment[0].user.image} className="image" />
-                <button><Link to={`/appointment/${appointment[0].user.id}`}className="text-color2">Upcoming appointment</Link></button>
+                <button className="button"><Link to={`/appointment/${appointment[0].user.id}`}className="text-color2">Upcoming appointment</Link></button>
               </div>
             </div> : null
           }
