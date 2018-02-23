@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import store, {fetchAppointment} from '../store'
 import { Link } from 'react-router-dom';
 
-// Main component is the initial page displayed by default 
+// Profile component will show all the details of the patient.
 
 class Profile extends Component {
+  
+  //ComponentDidMount will display the details of the patient.
   componentDidMount() {
     const id = this.props.match.params.id;
     const appointmentThunk = fetchAppointment(id);
@@ -20,7 +22,7 @@ class Profile extends Component {
             appointment.length > 0 ? <div>
               <div key={appointment[0].user.id} className="Search-box">
                 <img src= {appointment[0].user.image} className="image" />
-                <Link to={`/appointment/${appointment[0].user.id}`}className="text-color">Upcoming appointment</Link>
+                <Link to={`/appointment/${appointment[0].user.id}`}className="text-color2">Upcoming appointment</Link>
               </div>
             </div> : null
           }

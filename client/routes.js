@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {Router} from 'react-router-dom'
 import history from './history'
-// import {user} from './store'
 import {Profile, Appointments, Home, Navbar} from './components'
 import {Route, Switch} from 'react-router-dom'
 /**

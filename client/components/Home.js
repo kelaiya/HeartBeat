@@ -22,6 +22,7 @@ class Home extends Component {
     this.setState({ sortKey: event.target.value})
   }
 
+  //ComponentDidMount will give snames of all the patients.
   componentDidMount() {
     const userThunk = fetchUser();
     store.dispatch(userThunk);
@@ -40,13 +41,11 @@ class Home extends Component {
             {
               user ? <div>
                 <div className="sort">
-                  <form onSubmit={this.handleSortSubmit} className="sortclass">
-                    <select value={this.state.value} onChange={this.handleSortChange} className="sortclass">
-                      <option> SORT </option>
-                      <option value="titleA-Z"> By Title (A-Z) </option>
-                      <option value="titleZ-A"> By Title (Z-A) </option>
-                    </select>
-                  </form>
+                  <select value={this.state.value} onChange={this.handleSortChange} className="sortclass">
+                    <option> SORT </option>
+                    <option value="titleA-Z"> By Title (A-Z) </option>
+                    <option value="titleZ-A"> By Title (Z-A) </option>
+                  </select>
                 </div>
               </div> : <h1 />
               }
@@ -56,7 +55,7 @@ class Home extends Component {
               	return (
               		<div key={data.id} className="Search-box">
               			<img src= {data.image} className="image" />
-              			<Link to={`/${data.id}`}className="text-color">{data.name}</Link>
+              			<Link to={`/${data.id}`}className="text-color1">{data.name}</Link>
               		</div>
             		)
               })
@@ -75,4 +74,5 @@ const mapStateToProps = function(state){
 
 }
 
+//Export the class.
 export default connect(mapStateToProps)(Home);

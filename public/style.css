@@ -1,6 +1,6 @@
 body {
   font-family: sans-serif;
-  background-color: #030348;
+  background-color: #22313F;
 }
   .nav {
     display: flex;
@@ -24,11 +24,26 @@ body {
     font-family: -webkit-pictograph;
   }
 
-  .text-color{
+  .text-color1{
     color: purple;
     font-family: -webkit-pictograph;
     font-size: 30px;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px;
+  }
+
+  .text-color2{
+    color: purple;
+    font-family: -webkit-pictograph;
+    font-size: 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin: 20px;
   }
 
   .Search-box{
@@ -54,7 +69,19 @@ body {
     width: 150px;
     height: 40px;
     float: right;
+    margin: 15px;
     font-size: 18px;
     font-family: -webkit-pictograph;
     justify-content: right;
+  }
+
+  .display{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .appointment{
+    background-color: #612816;
+    margin: 20px;
+    color: #c3a6ba;
   }
